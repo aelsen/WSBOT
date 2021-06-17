@@ -1,0 +1,52 @@
+{
+  "name": "wsbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "keywords": [
+    "wsbot",
+    "wsdot",
+    "anacortes",
+    "orcas",
+    "ferry",
+    "bot",
+    "selenium"
+  ],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rimraf dist",
+    "transpile": "babel ./src --out-dir dist",
+    "build": "npm run clean && npm run transpile",
+    "start": "npm run build && node ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/runtime": "^7.14.6",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "selenium-webdriver": "^4.0.0-beta.4"
+  },
+  "nodemonConfig": {
+    "exec": "npm run start",
+    "watch": [
+      "src/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "babel-plugin-transform-runtime": "^6.23.0"
+  }
+}
