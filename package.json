@@ -16,7 +16,7 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf dist",
-    "transpile": "babel ./src --out-dir dist --extensions \".ts,.tsx\"",
+    "transpile": "babel ./src --out-dir dist --extensions '.ts,.tsx'",
     "build": "npm run clean && npm run transpile",
     "start": "npm run build && node ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,12 +28,14 @@
     "@babel/runtime": "^7.14.6",
     "nodemon": "^2.0.7",
     "rimraf": "^3.0.2",
-    "selenium-webdriver": "^4.0.0-beta.4"
+    "selenium-webdriver": "^4.0.0-beta.4",
+    "winston": "^3.3.3"
   },
   "nodemonConfig": {
     "exec": "npm run start",
+    "ext": "js, json, ts",
     "watch": [
-      "src/*"
+      "src"
     ],
     "ignore": [
       "**/__tests__/**",
